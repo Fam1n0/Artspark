@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divine Spark Art</title>
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: url('PASTE_YOUR_IMAGE_URL_HERE') no-repeat center center fixed; 
+    background-size: cover;
+  }
+  #defaultCanvas0 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<script>
+  let colors = ['#FF5733', '#FFC300', '#DAF7A6', '#900C3F', '#581845'];
+  
+  function setup() {
+    createCanvas(windowWidth, windowHeight);
+  }
+
+  function draw() {
+    if (frameCount % 60 === 0) {
+      for (let i = 0; i < 50; i++) {
+        fill(random(colors));
+        noStroke();
+        ellipse(random(width), random(height), random(10, 30));
+      }
+    }
+
+    if (mouseIsPressed) {
+      stroke(255);
+      strokeWeight(4);
+      line(mouseX, mouseY, pmouseX, pmouseY);
+    }
+  }
+</script>
+
+</body>
+</html>
